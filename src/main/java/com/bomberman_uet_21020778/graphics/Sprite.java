@@ -1,11 +1,12 @@
 package com.bomberman_uet_21020778.graphics;
 
-import javafx.scene.control.ScrollPane;
-
 import java.util.Arrays;
-import java.util.PrimitiveIterator;
 
+/**
+ * Lưu trữ thông tin các pixel của 1 sprite (hình ảnh game)
+ */
 public class Sprite {
+
   public final int SIZE;
   private int x, y;
   public int[] pixels;
@@ -14,10 +15,10 @@ public class Sprite {
   private SpriteSheet sheet;
 
   /*
-	|--------------------------------------------------------------------------
-	| Board sprites
-	|--------------------------------------------------------------------------
-	 */
+  |--------------------------------------------------------------------------
+  | Board sprites
+  |--------------------------------------------------------------------------
+   */
   public static Sprite grass = new Sprite(16, 6, 0, SpriteSheet.tiles, 16, 16);
   public static Sprite brick = new Sprite(16, 7, 0, SpriteSheet.tiles, 16, 16);
   public static Sprite wall = new Sprite(16, 5, 0, SpriteSheet.tiles, 16, 16);
@@ -179,20 +180,23 @@ public class Sprite {
   public static Sprite powerup_flamepass = new Sprite(16, 6, 10, SpriteSheet.tiles, 16, 16);
 
 
-  public Sprite(int size, int x, int y, SpriteSheet sheet, int realWidth, int realHeight) {
-    this.SIZE = size;
-    this.pixels = new int[this.SIZE * this.SIZE];
-    this.x = x * this.SIZE;
-    this.y = y * this.SIZE;
+
+
+
+  public Sprite(int size, int x, int y, SpriteSheet sheet, int rw, int rh) {
+    SIZE = size;
+    pixels = new int[SIZE * SIZE];
+    this.x = x * SIZE;
+    this.y = y * SIZE;
     this.sheet = sheet;
-    this.realWidth = realWidth;
-    this.realHeight = realHeight;
+    realWidth = rw;
+    realHeight = rh;
     load();
   }
 
   public Sprite(int size, int color) {
-    this.SIZE = size;
-    this.pixels = new int[this.SIZE * this.SIZE];
+    SIZE = size;
+    pixels = new int[SIZE * SIZE];
     setColor(color);
   }
 
@@ -201,10 +205,8 @@ public class Sprite {
   }
 
   private void load() {
-    for (int _y = 0; _y < SIZE; ++_y) {
-      for (int _x = 0; _x < SIZE; ++_x) {
-        pixels[_x + y * SIZE] = sheet.pixels[(x + _x) + (y + _y) * sheet.SIZE];
-      }
+    for (int y = 0; y < SIZE; y++) {
+      System.arraycopy(sheet.pixels, (x + this.x) + (y + this.y) * sheet.SIZE, pixels, 0 + y * SIZE, SIZE);
     }
   }
 
@@ -212,11 +214,11 @@ public class Sprite {
     int calc = animate % time;
     int diff = time / 3;
 
-    if (calc < diff) {
+    if(calc < diff) {
       return normal;
     }
 
-    if (calc < diff * 2) {
+    if(calc < diff * 2) {
       return x1;
     }
 
@@ -232,7 +234,8 @@ public class Sprite {
     return SIZE;
   }
 
-  public int getPixels(int i) {
+  public int getPixel(int i) {
     return pixels[i];
   }
+
 }

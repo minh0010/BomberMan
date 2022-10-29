@@ -1,18 +1,16 @@
 package com.bomberman_uet_21020778.entities;
 
-import com.bomberman_uet_21020778.graphics.Interface_Render;
+import java.util.ArrayList;
+import com.bomberman_uet_21020778.graphics.IRender;
 import com.bomberman_uet_21020778.graphics.Screen;
 import com.bomberman_uet_21020778.graphics.Sprite;
+import com.bomberman_uet_21020778.level.Coordinates;
 
-public abstract class Entity implements Interface_Render {
+public abstract class Entity implements IRender {
   protected double x, y;
   protected boolean removed = false;
   protected Sprite sprite;
 
-  /**
-   * Update được gọi liên tục trong vòng lặp game
-   * Mục đích chính để xử lý sự kiện và cật nhật trạng thái của thực thể
-   */
   @Override
   public abstract void update();
 
@@ -20,23 +18,33 @@ public abstract class Entity implements Interface_Render {
   public abstract void render(Screen screen);
 
   public void remove() {
-    removed = true;
+    this.removed = true;
   }
 
-  public abstract boolean collision(Entity e);
   public boolean isRemoved() {
-    return removed;
+    return this.removed;
   }
 
   public Sprite getSprite() {
-    return sprite;
+    return this.sprite;
   }
 
+  public abstract boolean collide(Entity e);
+
   public double getX() {
-    return x;
+    return this.x;
   }
 
   public double getY() {
-    return y;
+    return this.y;
+  }
+
+  // tọa độ trong hệ tọa độ ô/
+  public int getXTile() {
+    return Coordinates.pixelToTile(x + sprite.SIZE / 2);
+  }
+
+  public int getYTile() {
+    return Coordinates.pixelToTile(y - sprite.SIZE / 2);
   }
 }

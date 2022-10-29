@@ -2,6 +2,7 @@ module com.example.bomberman_uet_21020778 {
   requires javafx.controls;
   requires javafx.fxml;
   requires java.desktop;
+  requires java.logging;
 
 
   opens com.bomberman_uet_21020778 to javafx.fxml;
