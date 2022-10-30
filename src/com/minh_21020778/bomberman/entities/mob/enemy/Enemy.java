@@ -117,11 +117,13 @@ public abstract class Enemy extends Mob {
 	
 	@Override
 	public boolean canMove(double x, double y) {
-		
-		double xr = _x, yr = _y - 16; //subtract y to get more accurate results
-		
-		//the thing is, subract 15 to 16 (sprite size), so if we add 1 tile we get the next pixel tile with this
-		//we avoid the shaking inside tiles with the help of steps
+		double xr = _x, yr = _y - 16;
+		// giảm tọa độ y để tính toán được chính xác hơn
+
+		// khi trừ 15 thay cho 16 - kích thước một sprite
+		// chúng ta sẽ xác định được ô tiếp theo
+		// tránh được sự chênh lệch giá trị khi
+		// xác định tọa độ trong map
 		if(_direction == 0) { yr += _sprite.getSize() -1 ; xr += _sprite.getSize()/2; } 
 		if(_direction == 1) {yr += _sprite.getSize()/2; xr += 1;}
 		if(_direction == 2) { xr += _sprite.getSize()/2; yr += 1;}
@@ -129,9 +131,10 @@ public abstract class Enemy extends Mob {
 		
 		int xx = Coordinates.pixelToTile(xr) +(int)x;
 		int yy = Coordinates.pixelToTile(yr) +(int)y;
-		
-		Entity a = _board.getEntity(xx, yy, this); //entity of the position we want to go
-		
+
+		// vật thể ở vị trí muốn tới
+		Entity a = _board.getEntity(xx, yy, this);
+
 		return a.collide(this);
 	}
 	
@@ -142,22 +145,23 @@ public abstract class Enemy extends Mob {
 	 */
 	@Override
 	public boolean collide(Entity e) {
+		// gặp phải hướng nổ của flame
 		if(e instanceof DirectionalExplosion) {
 			kill();
 			return false;
 		}
-		
+
+		// gặp người chơi
 		if(e instanceof Player) {
 			((Player) e).kill();
 			return false;
 		}
-		
 		return true;
 	}
 	
 	@Override
 	public void kill() {
-		if(_alive == false) return;
+		if(!_alive) return;
 		_alive = false;
 		
 		_board.addPoints(_points);

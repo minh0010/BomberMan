@@ -28,7 +28,8 @@ public abstract class Entity implements IRender {
 	public Sprite getSprite() {
 		return _sprite;
 	}
-	
+
+	// hàm kiểm tra va chạm vật thể
 	public abstract boolean collide(Entity e);
 	
 	public double getX() {
@@ -38,12 +39,14 @@ public abstract class Entity implements IRender {
 	public double getY() {
 		return _y;
 	}
-	
+
 	public int getXTile() {
-		return Coordinates.pixelToTile(_x + _sprite.SIZE / 2); //plus half block for precision
+		return Coordinates.pixelToTile(_x + _sprite.SIZE / 2);
+		// cộng thêm một nửa để tăng thêm độ chính xác
 	}
 	
 	public int getYTile() {
-		return Coordinates.pixelToTile(_y - _sprite.SIZE / 2); //plus half block
+		return Coordinates.pixelToTile(_y - _sprite.SIZE / 2);
+		// cộng thêm một nửa để tăng độ chính xác
 	}
 }

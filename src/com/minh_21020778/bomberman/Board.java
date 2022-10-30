@@ -68,11 +68,9 @@ public class Board implements IRender {
 		}
 	}
 
-
 	@Override
 	public void render(Screen screen) {
 		if( _game.isPaused() ) return;
-		
 		//only render the visible part of screen
 		int x0 = Screen.xOffset >> 4; //tile precision, -> left X
 		int x1 = (Screen.xOffset + screen.getWidth() + Game.TILES_SIZE) / Game.TILES_SIZE; // -> right X
@@ -87,7 +85,6 @@ public class Board implements IRender {
 		
 		renderBombs(screen);
 		renderMobs(screen);
-		
 	}
 	
 	/*
@@ -440,22 +437,25 @@ public class Board implements IRender {
 	}
 
 	public int subtractTime() {
+		// giảm dần thời gian chơi của màn chơi
 		if(_game.isPaused())
 			return this._time;
 		else
 			return this._time--;
 	}
 
+	// lấy điểm hiện tại
 	public int getPoints() {
 		return _points;
 	}
 
+	// tăng điểm khi giết quái
 	public void addPoints(int points) {
 		this._points += points;
 	}
 
-	public void addLives(int lives) {
-		this._lives += lives;
+	public void reduceLives() {
+		this._lives--;
 	}
 	
 	public int getWidth() {

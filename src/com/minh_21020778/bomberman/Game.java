@@ -13,7 +13,7 @@ import com.minh_21020778.bomberman.gui.Frame;
 import com.minh_21020778.bomberman.input.Keyboard;
 
 public class Game extends Canvas {
-	
+
 	/*
 	|--------------------------------------------------------------------------
 	| Options & Configs
@@ -22,7 +22,6 @@ public class Game extends Canvas {
 	public static final double VERSION = 0.1;
 	public static final int TILES_SIZE = 16, WIDTH = TILES_SIZE * (int)(31 / 2), HEIGHT = 13 * TILES_SIZE;
 	public static int SCALE = 3;
-	
 	public static final String TITLE = "Bomberman_21020778" + VERSION;
 	
 	//initial configs
@@ -37,7 +36,7 @@ public class Game extends Canvas {
 	protected static int SCREENDELAY = 3;
 	
 	
-	//can be modified with bonus
+	// bonus
 	protected static int bombRate = BOMBRATE;
 	protected static int bombRadius = BOMBRADIUS;
 	protected static double playerSpeed = PLAYERSPEED;
@@ -45,7 +44,6 @@ public class Game extends Canvas {
 	
 	//Time in the level screen in seconds
 	protected int _screenDelay = SCREENDELAY;
-	
 	private final Keyboard _input;
 	private boolean _running = false;
 	private boolean _paused = true;
@@ -54,7 +52,7 @@ public class Game extends Canvas {
 	private final Screen screen;
 	private final Frame _frame;
 	
-	//this will be used to render the game, each render is a calculated image saved here
+	//render the game
 	private final BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private final int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
 	
@@ -78,7 +76,6 @@ public class Game extends Canvas {
 		}
 		
 		screen.clear();
-		
 		_board.render(screen);
 
 		System.arraycopy(screen._pixels, 0, pixels, 0, pixels.length);
@@ -100,9 +97,9 @@ public class Game extends Canvas {
 		}
 		
 		screen.clear();
-		
+
 		Graphics g = bs.getDrawGraphics();
-		
+
 		_board.drawScreen(g);
 
 		g.dispose();
@@ -139,13 +136,11 @@ public class Game extends Canvas {
 					_board.setShow(-1);
 					_paused = false;
 				}
-					
 				renderScreen();
 			} else {
 				renderGame();
 			}
-				
-			
+
 			frames++;
 			if(System.currentTimeMillis() - timer > 1000) { //once per second
 				_frame.setTime(_board.subtractTime());

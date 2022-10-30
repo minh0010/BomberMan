@@ -35,7 +35,6 @@ public class LayeredEntity extends Entity {
 	}
 	
 	public Entity getTopEntity() {
-		
 		return _entities.getLast();
 	}
 	

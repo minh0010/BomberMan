@@ -5,7 +5,6 @@ import java.awt.Color;
 import com.minh_21020778.bomberman.graphics.Screen;
 
 public class Message extends Entity {
-
 	protected String _message;
 	protected int _duration;
 	protected Color _color;
@@ -52,6 +51,4 @@ public class Message extends Entity {
 	public boolean collide(Entity e) {
 		return true;
 	}
-	
-	
 }
