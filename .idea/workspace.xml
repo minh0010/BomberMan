@@ -4,62 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef6c9a8a-757c-4581-88e1-f881978c8de0" name="Default" comment="i can't not fix all bug then i delete it">
-      <change afterPath="$PROJECT_DIR$/src/com/minh_21020778/bomberman/entities/mob/enemy/ai/AI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/levels/Level2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/levels/Level3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/levels/Level4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/levels/Level5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/Bomberman.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/AnimatedEntitiy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/Entity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/LayeredEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/bomb/Bomb.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/bomb/DirectionalExplosion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/bomb/Explosion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/Mob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Balloom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Enemy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/ai/AI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/ai/AILow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minh_21020778/bomberman/entities/mob/enemy/ai/AILow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/ai/AIMedium.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/GrassTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/PortalTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/Tile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/WallTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/destroyable/BrickTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/destroyable/DestroyableTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/powerup/Powerup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/powerup/PowerupBombs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/powerup/PowerupFlames.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/powerup/PowerupSpeed.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/exceptions/BombermanException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/exceptions/LoadLevelException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/IRender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/Screen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/Sprite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/SpriteSheet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/CodeDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/Frame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/GamePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/InfoDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/InfoPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/menu/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/menu/Help.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/menu/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/menu/Options.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/input/Keyboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/Coordinates.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/FileLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/ILevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/Level.java" beforeDir="false" />
-    </list>
+    <list default="true" id="ef6c9a8a-757c-4581-88e1-f881978c8de0" name="Default" comment="haha alot more bug can't fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -285,7 +230,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667136310591</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="i can't not fix all bug then i delete it">
+      <created>1667144445738</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667144445738</updated>
+    </task>
+    <task id="LOCAL-00005" summary="haha alot more bug can't fix">
+      <created>1667144518079</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667144518079</updated>
+    </task>
+    <task id="LOCAL-00006" summary="haha alot more bug can't fix">
+      <created>1667144553581</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667144553581</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -339,7 +305,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change" />
     <MESSAGE value="i can't not fix all bug then i delete it" />
-    <option name="LAST_COMMIT_MESSAGE" value="i can't not fix all bug then i delete it" />
+    <MESSAGE value="haha alot more bug can't fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="haha alot more bug can't fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
