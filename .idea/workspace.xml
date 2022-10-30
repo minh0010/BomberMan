@@ -4,16 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef6c9a8a-757c-4581-88e1-f881978c8de0" name="Default" comment="change">
+    <list default="true" id="ef6c9a8a-757c-4581-88e1-f881978c8de0" name="Default" comment="i can't not fix all bug then i delete it">
+      <change afterPath="$PROJECT_DIR$/src/com/minh_21020778/bomberman/entities/mob/enemy/ai/AI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Doll.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Kondoria.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Minvo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Oneal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/destroyable/BrickTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/destroyable/BrickTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/Screen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/FileLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/FileLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/levels/Level2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/levels/Level3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/levels/Level4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/levels/Level5.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/Bomberman.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/AnimatedEntitiy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/LayeredEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/bomb/Bomb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/bomb/DirectionalExplosion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/bomb/Explosion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/Mob.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Balloom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/ai/AI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/ai/AILow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/minh_21020778/bomberman/entities/mob/enemy/ai/AILow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/ai/AIMedium.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/GrassTile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/PortalTile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/Tile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/WallTile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/destroyable/BrickTile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/destroyable/DestroyableTile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/powerup/Powerup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/powerup/PowerupBombs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/powerup/PowerupFlames.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/powerup/PowerupSpeed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/exceptions/BombermanException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/exceptions/LoadLevelException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/IRender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/Screen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/Sprite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/SpriteSheet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/CodeDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/Frame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/GamePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/InfoDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/InfoPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/menu/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/menu/Help.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/menu/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/gui/menu/Options.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/input/Keyboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/Coordinates.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/FileLevel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/ILevel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/Level.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,14 +154,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "last_opened_file_path": "C:/Users/Admin/IdeaProjects/BomberMan_UET_21020778",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.infernus.idea.checkstyle.CheckStyleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -157,13 +205,12 @@
       <envs />
       <method />
     </configuration>
-    <configuration name="Bomberman" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.carlosflorencio.bomberman.Bomberman" />
+    <configuration name="Bomberman" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.minh_21020778.bomberman.Bomberman" />
       <module name="Bomberman" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.carlosflorencio.bomberman.*" />
+          <option name="PATTERN" value="com.minh_21020778.bomberman.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -208,11 +255,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Bomberman" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -236,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667134817020</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="i can't not fix all bug then i delete it">
+      <created>1667136310591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667136310591</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -289,7 +338,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="change" />
-    <option name="LAST_COMMIT_MESSAGE" value="change" />
+    <MESSAGE value="i can't not fix all bug then i delete it" />
+    <option name="LAST_COMMIT_MESSAGE" value="i can't not fix all bug then i delete it" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/carlosflorencio/bomberman/Game.java">
