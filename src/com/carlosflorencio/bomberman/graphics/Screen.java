@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
+import java.util.Arrays;
 
 import com.carlosflorencio.bomberman.Board;
 import com.carlosflorencio.bomberman.Game;
@@ -13,7 +14,7 @@ import com.carlosflorencio.bomberman.entities.mob.Player;
 public class Screen {
 	protected int _width, _height;
 	public int[] _pixels;
-	private int _transparentColor = 0xffff00ff; //pink with alpha channel (ff in the begining)
+	private final int _transparentColor = 0xffff00ff; //pink with alpha channel (ff in the begining)
 	
 	public static int xOffset = 0, yOffset = 0;
 	
@@ -22,13 +23,10 @@ public class Screen {
 		_height = height;
 		
 		_pixels = new int[width * height];
-		
 	}
 	
 	public void clear() {
-		for (int i = 0; i < _pixels.length; i++) {
-			_pixels[i] = 0;
-		}
+		Arrays.fill(_pixels, 0);
 	}
 	
 	public void renderEntity(int xp, int yp, Entity entity) { //save entity pixels

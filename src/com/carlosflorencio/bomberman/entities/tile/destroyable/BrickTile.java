@@ -3,7 +3,6 @@ package com.carlosflorencio.bomberman.entities.tile.destroyable;
 
 import com.carlosflorencio.bomberman.entities.Entity;
 import com.carlosflorencio.bomberman.entities.bomb.DirectionalExplosion;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Kondoria;
 import com.carlosflorencio.bomberman.graphics.Screen;
 import com.carlosflorencio.bomberman.graphics.Sprite;
 import com.carlosflorencio.bomberman.level.Coordinates;
@@ -38,9 +37,6 @@ public class BrickTile extends DestroyableTile {
 		
 		if(e instanceof DirectionalExplosion)
 			destroy();
-		
-		if(e instanceof Kondoria)
-			return true;
 			
 		return false;
 	}

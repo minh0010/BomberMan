@@ -13,10 +13,6 @@ import com.carlosflorencio.bomberman.Game;
 import com.carlosflorencio.bomberman.entities.LayeredEntity;
 import com.carlosflorencio.bomberman.entities.mob.Player;
 import com.carlosflorencio.bomberman.entities.mob.enemy.Balloom;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Doll;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Kondoria;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Minvo;
-import com.carlosflorencio.bomberman.entities.mob.enemy.Oneal;
 import com.carlosflorencio.bomberman.entities.tile.GrassTile;
 import com.carlosflorencio.bomberman.entities.tile.PortalTile;
 import com.carlosflorencio.bomberman.entities.tile.WallTile;
@@ -133,22 +129,6 @@ public class FileLevel extends Level {
 			//Enemies
 			case '1':
 				_board.addMob( new Balloom(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
-				_board.addEntitie(pos, new GrassTile(x, y, Sprite.grass) );
-				break;
-			case '2':
-				_board.addMob( new Oneal(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
-				_board.addEntitie(pos, new GrassTile(x, y, Sprite.grass) );
-				break;
-			case '3':
-				_board.addMob( new Doll(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
-				_board.addEntitie(pos, new GrassTile(x, y, Sprite.grass) );
-				break;
-			case '4':
-				_board.addMob( new Minvo(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
-				_board.addEntitie(pos, new GrassTile(x, y, Sprite.grass) );
-				break;
-			case '5':
-				_board.addMob( new Kondoria(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
 				_board.addEntitie(pos, new GrassTile(x, y, Sprite.grass) );
 				break;
 			default: 

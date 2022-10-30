@@ -52,6 +52,4 @@ public class Message extends Entity {
 	public boolean collide(Entity e) {
 		return true;
 	}
-	
-	
 }

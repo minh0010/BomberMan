@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef6c9a8a-757c-4581-88e1-f881978c8de0" name="Default" comment="" />
+    <list default="true" id="ef6c9a8a-757c-4581-88e1-f881978c8de0" name="Default" comment="change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Doll.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Kondoria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Minvo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/mob/enemy/Oneal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/destroyable/BrickTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/entities/tile/destroyable/BrickTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/graphics/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/FileLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/carlosflorencio/bomberman/level/FileLevel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,6 +222,21 @@
       <option name="presentableId" value="Default" />
       <updated>1667132068336</updated>
     </task>
+    <task id="LOCAL-00001" summary="change">
+      <created>1667134672421</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667134672421</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change">
+      <created>1667134817020</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667134817020</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -261,6 +286,10 @@
     <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/carlosflorencio/bomberman/Game.java">
