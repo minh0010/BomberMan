@@ -20,18 +20,20 @@ import com.minh_21020778.bomberman.input.Keyboard;
 import com.minh_21020778.bomberman.level.FileLevel;
 import com.minh_21020778.bomberman.level.Level;
 
+// thực hiện các chức năng của game
+// điều khiển, render, loadlevel
 public class Board implements IRender {
-
-	public int _width, _height;
 	protected Level _level;
 	protected Game _game;
 	protected Keyboard _input;
 	protected Screen _screen;
-	
-	public Entity[] _entities;
-	public List<Mob> _mobs = new ArrayList<Mob>();
-	protected List<Bomb> _bombs = new ArrayList<Bomb>();
-	private final List<Message> _messages = new ArrayList<Message>();
+	public Entity[] _entities; // danh sách thực thể
+	public List<Mob> _mobs = new ArrayList<Mob>(); // danh sách quái
+	protected List<Bomb> _bombs = new ArrayList<Bomb>(); // danh sách bomb của người chơi
+	// cần có danh sách này vì khi ăn được vật phẩm làm tăng số lượng bomb
+	// bomb mới được lưu trong danh sách này
+	private final List<Message> _messages = new ArrayList<Message>(); // tổng hợp các message
+	// để hiển thị ra màn hình game
 	
 	private int _screenToShow = -1; //1:endgame, 2:changelevel, 3:paused
 	
@@ -44,12 +46,13 @@ public class Board implements IRender {
 		_input = input;
 		_screen = screen;
 		
-		changeLevel(1); //start in level 1
+		changeLevel(1); // bắt đầu từ level 1
+		// đáng lẽ có level 2 nhưng bị bug :((((
 	}
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Render & Update
+	| các hàm render và update
 	|--------------------------------------------------------------------------
 	 */
 	@Override
@@ -61,7 +64,8 @@ public class Board implements IRender {
 		updateBombs();
 		updateMessages();
 		detectEndGame();
-		
+
+		// kiểm tra các entities có lệnh xóa hay không
 		for (int i = 0; i < _mobs.size(); i++) {
 			Mob a = _mobs.get(i);
 			if(((Entity)a).isRemoved()) _mobs.remove(i);
@@ -71,27 +75,26 @@ public class Board implements IRender {
 	@Override
 	public void render(Screen screen) {
 		if( _game.isPaused() ) return;
-		//only render the visible part of screen
-		int x0 = Screen.xOffset >> 4; //tile precision, -> left X
-		int x1 = (Screen.xOffset + screen.getWidth() + Game.TILES_SIZE) / Game.TILES_SIZE; // -> right X
+		// hiển thị mỗi phần nhìn được trong màn hình game thôi
+		int x0 = Screen.xOffset >> 4;
+		int x1 = (Screen.xOffset + screen.getWidth() + Game.TILES_SIZE) / Game.TILES_SIZE;
 		int y0 = Screen.yOffset >> 4;
-		int y1 = (Screen.yOffset + screen.getHeight()) / Game.TILES_SIZE; //render one tile plus to fix black margins
+		int y1 = (Screen.yOffset + screen.getHeight()) / Game.TILES_SIZE;
 		
 		for (int y = y0; y < y1; y++) {
 			for (int x = x0; x < x1; x++) {
+				// render các thực thể trong list
 				_entities[x + y * _level.getWidth()].render(screen);
 			}
 		}
-		
+
+		// render mấy trái bomb
 		renderBombs(screen);
+		// render mấy con quái vật
 		renderMobs(screen);
 	}
 	
-	/*
-	|--------------------------------------------------------------------------
-	| ChangeLevel
-	|--------------------------------------------------------------------------
-	 */
+	// game mới
 	public void newGame() {
 		resetProperties();
 		changeLevel(1);
@@ -112,11 +115,13 @@ public class Board implements IRender {
 	public void restartLevel() {
 		changeLevel(_level.getLevel());
 	}
-	
+
+	// sang level mới
 	public void nextLevel() {
 		changeLevel(_level.getLevel() + 1);
 	}
-	
+
+
 	public void changeLevel(int level) {
 		_time = Game.TIME;
 		_screenToShow = 2;
@@ -125,7 +130,7 @@ public class Board implements IRender {
 		_mobs.clear();
 		_bombs.clear();
 		_messages.clear();
-		
+
 		try {
 			_level = new FileLevel("levels/Level" + level + ".txt", this);
 			_entities = new Entity[_level.getHeight() * _level.getWidth()];
@@ -135,7 +140,9 @@ public class Board implements IRender {
 			endGame();
 		}
 	}
-	
+
+	// check xem item đã dùng hay chưa
+	// nếu đã dùng rồi thì cài đặt không hiện lại nữa
 	public boolean isPowerupUsed(int x, int y, int level) {
 		Powerup p;
 		for (int i = 0; i < Player._powerups.size(); i++) {
@@ -143,13 +150,23 @@ public class Board implements IRender {
 			if(p.getX() == x && p.getY() == y && level == p.getLevel())
 				return false;
 		}
-		
+
 		return true;
 	}
 
+	// khi mà hết thời gian chơi thì bắt buộc thua
 	protected void detectEndGame() {
-		if(_time <= 0)
-			restartLevel();
+		if(_time <= 0) {
+			_lives--;
+
+			// còn mạng thì cho chơi lại, hết mạng thì thua
+			if (_lives > 0) {
+				restartLevel();
+			}
+			else {
+				endGame();
+			}
+		}
 	}
 	
 	public void endGame() {
@@ -157,7 +174,8 @@ public class Board implements IRender {
 		_game.resetScreenDelay();
 		_game.pause();
 	}
-	
+
+	// kiếm tra xem còn quái hay không
 	public boolean detectNoEnemies() {
 		int total = 0;
 		for (Mob mob : _mobs) {
@@ -170,7 +188,7 @@ public class Board implements IRender {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Pause & Resume
+	| dừng game
 	|--------------------------------------------------------------------------
 	 */
 	public void gamePause() {
@@ -188,9 +206,11 @@ public class Board implements IRender {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Screens
+	| các màn hình game
 	|--------------------------------------------------------------------------
 	 */
+
+	// hiển thị màn hình
 	public void drawScreen(Graphics g) {
 		switch (_screenToShow) {
 			case 1:
@@ -207,7 +227,7 @@ public class Board implements IRender {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Getters And Setters
+	| các hàm get và set
 	|--------------------------------------------------------------------------
 	 */
 	public Entity getEntity(double x, double y, Mob m) {

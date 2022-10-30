@@ -5,6 +5,7 @@ import com.minh_21020778.bomberman.gui.Frame;
 
 public class Bomberman {
 	public static void main(String[] args) throws BombermanException {
-		Frame mainwindow = new Frame();
+		// tạo frame mới
+		new Frame();
 	}
 }

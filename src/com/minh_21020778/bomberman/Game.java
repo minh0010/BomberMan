@@ -12,47 +12,48 @@ import com.minh_21020778.bomberman.graphics.Screen;
 import com.minh_21020778.bomberman.gui.Frame;
 import com.minh_21020778.bomberman.input.Keyboard;
 
+// tạo gameloop, lưu trữ các thông số toàn cục cho game
+// gọi các phương thức render(), update() ... cho các entity
 public class Game extends Canvas {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Options & Configs
+	| các thông số toàn cục
 	|--------------------------------------------------------------------------
 	 */
 	public static final double VERSION = 0.1;
-	public static final int TILES_SIZE = 16, WIDTH = TILES_SIZE * (int)(31 / 2), HEIGHT = 13 * TILES_SIZE;
-	public static int SCALE = 3;
-	public static final String TITLE = "Bomberman_21020778" + VERSION;
+	// kích thước một ô
+	public static final int TILES_SIZE = 16;
+	// chiều dài chiều rộng màn hình hiển thị
+	public static final int WIDTH = TILES_SIZE * (int)(31 / 2), HEIGHT = 13 * TILES_SIZE;
+	public static int SCALE = 3; // tỉ lệ, thay đổi cái này để game to hay nhỏ nhé, 3 chắc là đẹp nhất rồi
+	public static final String TITLE = "Bomberman_21020778" + VERSION; // tên game nè
+	private static final int BOMBRATE = 1; // số bom có thể đặt
+	private static final int BOMBRADIUS = 1; // độ dài vụ nổ
+	private static final double PLAYERSPEED = 1.0; // tốc độ di chuyển nhân vật chính - player
+	public static final int TIME = 200; // giới hạn thời gian chơi
+	public static final int POINTS = 0; // số điểm của người chơi
+	public static final int LIVES = 3; // số mạng của người chơi
+	protected static int SCREENDELAY = 1; // độ trễ chờ màn hình
 	
-	//initial configs
-	private static final int BOMBRATE = 1;
-	private static final int BOMBRADIUS = 1;
-	private static final double PLAYERSPEED = 1.0;
 	
-	public static final int TIME = 200;
-	public static final int POINTS = 0;
-	public static final int LIVES = 3;
-	
-	protected static int SCREENDELAY = 3;
-	
-	
-	// bonus
+	// thông số của người chơi, cái này không để final để còn thay đổi khi chơi game
 	protected static int bombRate = BOMBRATE;
 	protected static int bombRadius = BOMBRADIUS;
 	protected static double playerSpeed = PLAYERSPEED;
 	
 	
-	//Time in the level screen in seconds
-	protected int _screenDelay = SCREENDELAY;
-	private final Keyboard _input;
-	private boolean _running = false;
-	private boolean _paused = true;
+	// thông số về thời gian chơi trong màn chơi
+ 	protected int _screenDelay = SCREENDELAY; // độ trễ
+	private final Keyboard _input; // phím vào
+	private boolean _running = false; // nhân vật di chuyển hay không
+	private boolean _paused = true; // dừng game
 	
 	private final Board _board;
 	private final Screen screen;
 	private final Frame _frame;
 	
-	//render the game
+	// các biến render game
 	private final BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private final int[] pixels = ((DataBufferInt)image.getRaster().getDataBuffer()).getData();
 	
@@ -114,25 +115,28 @@ public class Game extends Canvas {
 	public void start() {
 		_running = true;
 		
-		long  lastTime = System.nanoTime();
+		long lastTime = System.nanoTime();
 		long timer = System.currentTimeMillis();
-		final double ns = 1000000000.0 / 60.0; //nanosecond, 60 frames per second
+		final double ns = 1000000000.0 / 60.0; //chia thời gian dạng nanosecond (60s/second)
 		double delta = 0;
 		int frames = 0;
 		int updates = 0;
 		requestFocus();
 		while(_running) {
+			// lấy thời gian chơi này
 			long now = System.nanoTime();
 			delta += (now - lastTime) / ns;
 			lastTime = now;
+			// denta =1 ; now -lastTime = ns  => thời gian của của 1 vòng loob = T chu kì chuẩn
 			while(delta >= 1) {
 				update();
 				updates++;
 				delta--;
 			}
-			
+
+			// tạm dừng, render màn hình trước khi vào chơi
 			if(_paused) {
-				if(_screenDelay <= 0) { //time passed? lets reset status to show the game
+				if(_screenDelay <= 0) {
 					_board.setShow(-1);
 					_paused = false;
 				}
@@ -142,7 +146,8 @@ public class Game extends Canvas {
 			}
 
 			frames++;
-			if(System.currentTimeMillis() - timer > 1000) { //once per second
+			// kiểm tra mỗi giây một lần
+			if(System.currentTimeMillis() - timer > 1000) {
 				_frame.setTime(_board.subtractTime());
 				_frame.setPoints(_board.getPoints());
 				_frame.setLives(_board.getLives());
@@ -159,7 +164,7 @@ public class Game extends Canvas {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Getters & Setters
+	| các hàm getter và setter
 	|--------------------------------------------------------------------------
 	 */
 	public static double getPlayerSpeed() {

@@ -5,6 +5,7 @@ import com.minh_21020778.bomberman.entities.Entity;
 import com.minh_21020778.bomberman.entities.mob.Player;
 import com.minh_21020778.bomberman.graphics.Sprite;
 
+// cái cổng hết game
 public class PortalTile extends Tile {
 
 	protected Board _board;
@@ -16,10 +17,8 @@ public class PortalTile extends Tile {
 	
 	@Override
 	public boolean collide(Entity e) {
-		
 		if(e instanceof Player ) {
-			
-			if(_board.detectNoEnemies() == false)
+			if(!_board.detectNoEnemies())
 				return false;
 			
 			if(e.getXTile() == getX() && e.getYTile() == getY()) {
