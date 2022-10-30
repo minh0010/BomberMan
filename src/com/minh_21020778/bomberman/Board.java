@@ -333,7 +333,7 @@ public class Board implements IRender {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Adds and Removes
+	| các hàm add và remove
 	|--------------------------------------------------------------------------
 	 */
 	public void addEntitie(int pos, Entity e) {
@@ -354,7 +354,7 @@ public class Board implements IRender {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Renders
+	| các hàm render
 	|--------------------------------------------------------------------------
 	 */
 	protected void renderEntities(Screen screen) {
@@ -384,7 +384,7 @@ public class Board implements IRender {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Updates
+	| các hàm update
 	|--------------------------------------------------------------------------
 	 */
 	protected void updateEntities() {
@@ -422,10 +422,10 @@ public class Board implements IRender {
 				_messages.remove(i);
 		}
 	}
-	
+
 	/*
 	|--------------------------------------------------------------------------
-	| Getters & Setters
+	| các hàm get và set
 	|--------------------------------------------------------------------------
 	 */
 	public Keyboard getInput() {

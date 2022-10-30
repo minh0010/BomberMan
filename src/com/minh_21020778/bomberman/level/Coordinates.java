@@ -2,6 +2,7 @@ package com.minh_21020778.bomberman.level;
 
 import com.minh_21020778.bomberman.Game;
 
+// tọa độ trong map
 public class Coordinates {
 	
 	public static int pixelToTile(double i) {
@@ -15,6 +16,4 @@ public class Coordinates {
 	public static int tileToPixel(double i) {
 		return (int)(i * Game.TILES_SIZE);
 	}
-	
-	
 }

@@ -3,10 +3,11 @@ package com.minh_21020778.bomberman.input;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+// tiếp nhận và xử lý thông tin từ bàn phím nhập vào
 public class Keyboard implements KeyListener {
 	
-	private boolean[] keys = new boolean[120];
-	public boolean up, down, left, right, space;
+	private boolean[] keys = new boolean[120]; // bằng này phím là đủ cho game này rồi
+	public boolean up, down, left, right, space; // các phím cơ bản
 	
 	public void update() {
 		up = keys[KeyEvent.VK_UP] || keys[KeyEvent.VK_W];
@@ -22,13 +23,10 @@ public class Keyboard implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		keys[e.getKeyCode()] = true;
-		
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		keys[e.getKeyCode()] = false;
-		
 	}
-
 }

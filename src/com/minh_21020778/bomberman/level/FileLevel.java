@@ -25,8 +25,8 @@ import com.minh_21020778.bomberman.exceptions.LoadLevelException;
 import com.minh_21020778.bomberman.graphics.Screen;
 import com.minh_21020778.bomberman.graphics.Sprite;
 
+// load bản đồ từ file
 public class FileLevel extends Level {
-	
 	public FileLevel(String path, Board board) throws LoadLevelException {
 		super(path, board);
 	}
@@ -53,7 +53,7 @@ public class FileLevel extends Level {
  			}
 			
 			in.close();
-		} catch (IOException e) {
+		} catch (IOException e) { // hông hiểu sao vẫn bị bug ở đây luôn nè :(((
 			throw new LoadLevelException("Error loading level " + path, e);
 		}
 	}
