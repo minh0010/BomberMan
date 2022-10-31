@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class CodeDialog implements WindowListener, ActionListener {
 
 	private Frame _frame;

@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import com.minh_21020778.bomberman.Game;
 import com.minh_21020778.bomberman.gui.menu.Menu;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class Frame extends JFrame {
 	
 	public GamePanel _gamepane;

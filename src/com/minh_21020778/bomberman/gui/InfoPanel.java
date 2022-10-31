@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import com.minh_21020778.bomberman.Game;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class InfoPanel extends JPanel {
 	
 	private JLabel timeLabel;

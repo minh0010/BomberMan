@@ -4,6 +4,7 @@ import javax.swing.JMenuBar;
 
 import com.minh_21020778.bomberman.gui.Frame;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class Menu extends JMenuBar {
 	
 	public Menu(Frame frame) {
@@ -11,5 +12,4 @@ public class Menu extends JMenuBar {
 		add( new Options(frame) );
 		add( new Help(frame) );
 	}
-	
 }

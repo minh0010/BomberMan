@@ -6,9 +6,10 @@ import java.net.URL;
 
 import javax.imageio.ImageIO;
 
+// tất cả sprite được lưu trữ trong vào một ảnh duy nhất
+// class này giúp lấy ra sprite riêng từ hình ảnh đó
 public class SpriteSheet {
-
-	private String _path;
+	private final String _path;
 	public final int SIZE;
 	public int[] _pixels;
 	
@@ -20,7 +21,8 @@ public class SpriteSheet {
 		_pixels = new int[SIZE * SIZE];
 		load();
 	}
-	
+
+	// load hình vào class
 	private void load() {
 		try {
 			URL a = SpriteSheet.class.getResource(_path);
@@ -30,7 +32,6 @@ public class SpriteSheet {
 			image.getRGB(0, 0, w, h, _pixels, 0, w);
 		} catch (IOException e) {
 			e.printStackTrace();
-			//TODO: what should this do? stop the program? yes i think
 			System.exit(0);
 		}
 	}

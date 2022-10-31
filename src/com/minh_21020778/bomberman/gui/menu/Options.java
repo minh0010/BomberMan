@@ -15,6 +15,7 @@ import javax.swing.event.ChangeListener;
 import com.minh_21020778.bomberman.gui.Frame;
 import com.minh_21020778.bomberman.Game;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class Options extends JMenu implements ChangeListener {
 
 	Frame _frame;

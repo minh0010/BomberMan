@@ -11,10 +11,11 @@ import com.minh_21020778.bomberman.Game;
 import com.minh_21020778.bomberman.entities.Entity;
 import com.minh_21020778.bomberman.entities.mob.Player;
 
+// xử lý render cho các entity và một số màn hình game
 public class Screen {
 	protected int _width, _height;
 	public int[] _pixels;
-	private final int _transparentColor = 0xffff00ff;
+	private final int _transparentColor = 0xffff00ff; // màu này là màu gì quên mất rồi
 	public static int xOffset = 0, yOffset = 0;
 	
 	public Screen(int width, int height) {
@@ -26,8 +27,7 @@ public class Screen {
 	public void clear() {
 		Arrays.fill(_pixels, 0);
 	}
-	
-	public void renderEntity(int xp, int yp, Entity entity) { //save entity pixels
+	public void renderEntity(int xp, int yp, Entity entity) { // entity pixels đã được lưu
 		xp -= xOffset;
 		yp -= yOffset;
 		for (int y = 0; y < entity.getSprite().getSize(); y++) {
@@ -35,7 +35,7 @@ public class Screen {
 			for (int x = 0; x < entity.getSprite().getSize(); x++) {
 				int xa = x + xp; //add offset
 				if(xa < -entity.getSprite().getSize() || xa >= _width || ya < 0 || ya >= _height) break; //fix black margins
-				if(xa < 0) xa = 0; //start at 0 from left
+				if(xa < 0) xa = 0; // bắt đầu từ 0 từ bên trái
 				int color = entity.getSprite().getPixel(x + y * entity.getSprite().getSize());
 				if(color != _transparentColor) _pixels[xa + ya * _width] = color;
 			}
@@ -83,7 +83,7 @@ public class Screen {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Game Screens
+	| một số màn hình game
 	|--------------------------------------------------------------------------
 	 */
 	public void drawEndGame(Graphics g, int points) {
@@ -109,7 +109,6 @@ public class Screen {
 		g.setFont(font);
 		g.setColor(Color.white);
 		drawCenteredString("LEVEL " + level, getRealWidth(), getRealHeight(), g);
-		
 	}
 	
 	public void drawPaused(Graphics g) {
@@ -117,11 +116,8 @@ public class Screen {
 		g.setFont(font);
 		g.setColor(Color.white);
 		drawCenteredString("PAUSED", getRealWidth(), getRealHeight(), g);
-		
 	}
-	
-	
-	
+
 	public void drawCenteredString(String s, int w, int h, Graphics g) {
 	    FontMetrics fm = g.getFontMetrics();
 	    int x = (w - fm.stringWidth(s)) / 2;

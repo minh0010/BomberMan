@@ -109,19 +109,19 @@ public class Board implements IRender {
 		_game.playerSpeed = 1.0;
 		_game.bombRadius = 1;
 		_game.bombRate = 1;
-		
 	}
 
+	// chơi lại level hiện tại
 	public void restartLevel() {
 		changeLevel(_level.getLevel());
 	}
 
-	// sang level mới
+	// sang level tiếp theo
 	public void nextLevel() {
 		changeLevel(_level.getLevel() + 1);
 	}
 
-
+	// sang level mới
 	public void changeLevel(int level) {
 		_time = Game.TIME;
 		_screenToShow = 2;
@@ -134,7 +134,7 @@ public class Board implements IRender {
 		try {
 			_level = new FileLevel("levels/Level" + level + ".txt", this);
 			_entities = new Entity[_level.getHeight() * _level.getWidth()];
-			
+
 			_level.createEntities();
 		} catch (LoadLevelException e) {
 			endGame();

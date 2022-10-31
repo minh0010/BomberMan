@@ -3,6 +3,7 @@ package com.minh_21020778.bomberman.entities.tile.powerup;
 import com.minh_21020778.bomberman.entities.tile.Tile;
 import com.minh_21020778.bomberman.graphics.Sprite;
 
+// lưu trữ các vật phẩm trong game
 public abstract class Powerup extends Tile {
 
 	protected int _duration = -1; // -1 is infinite, duration in lifes

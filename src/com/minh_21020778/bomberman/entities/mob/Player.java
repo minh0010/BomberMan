@@ -34,8 +34,8 @@ public class Player extends Mob {
 		_input = _board.getInput();
 		_sprite = Sprite.player_right;
 	}
-	
-	
+
+
 	/*
 	|--------------------------------------------------------------------------
 	| Update & Render
@@ -229,7 +229,7 @@ public class Player extends Mob {
 		Powerup p;
 		for (int i = 0; i < _powerups.size(); i++) {
 			p = _powerups.get(i);
-			if(p.isActive() == false)
+			if(!p.isActive())
 				_powerups.remove(i);
 		}
 	}

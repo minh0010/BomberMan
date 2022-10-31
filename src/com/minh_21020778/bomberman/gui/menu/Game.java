@@ -13,6 +13,7 @@ import com.minh_21020778.bomberman.gui.CodeDialog;
 import com.minh_21020778.bomberman.gui.Frame;
 import com.minh_21020778.bomberman.gui.InfoDialog;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class Game extends JMenu {
 
 	public Frame frame;
@@ -20,7 +21,7 @@ public class Game extends JMenu {
 	public Game(Frame frame) {
 		super("Game");
 		this.frame = frame;
-		
+
 		/*
 		 * New Game
 		 */
@@ -36,14 +37,6 @@ public class Game extends JMenu {
 		scores.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T, ActionEvent.CTRL_MASK));
 		scores.addActionListener(new MenuActionListener(frame));
 		add(scores);
-		
-		/*
-		 * Codes
-		 */
-		JMenuItem codes = new JMenuItem("Codes");
-		codes.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
-		codes.addActionListener(new MenuActionListener(frame));
-		add(codes);
 	}
 	
 	class MenuActionListener implements ActionListener {

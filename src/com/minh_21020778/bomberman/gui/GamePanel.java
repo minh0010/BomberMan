@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import com.minh_21020778.bomberman.Game;
 import com.minh_21020778.bomberman.exceptions.BombermanException;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class GamePanel extends JPanel {
 
 	private Game _game;

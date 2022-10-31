@@ -12,9 +12,9 @@ import com.minh_21020778.bomberman.level.Coordinates;
 
 public class Bomb extends AnimatedEntitiy {
 
-	//options
-	protected double _timeToExplode = 120; //2 seconds
-	public int _timeAfter = 20; //time to explosions disapear
+	// các cài đặt
+	protected double _timeToExplode = 120; //2 giây
+	public int _timeAfter = 20; // thời gian tồn tại sau khi nổ
 	
 	protected Board _board;
 	protected boolean _allowedToPassThru = true;
@@ -27,7 +27,8 @@ public class Bomb extends AnimatedEntitiy {
 		_board = board;
 		_sprite = Sprite.bomb;
 	}
-	
+
+	// cật nhật tình trạng bomb
 	@Override
 	public void update() {
 		if(_timeToExplode > 0) 
@@ -46,7 +47,8 @@ public class Bomb extends AnimatedEntitiy {
 			
 		animate();
 	}
-	
+
+	// render hình ảnh bomb
 	@Override
 	public void render(Screen screen) {
 		if(_exploded) {
@@ -60,19 +62,21 @@ public class Bomb extends AnimatedEntitiy {
 		
 		screen.renderEntity(xt, yt , this);
 	}
-	
+
+	// render bomb nổ
 	public void renderExplosions(Screen screen) {
-		for (int i = 0; i < _explosions.length; i++) {
-			_explosions[i].render(screen);
+		for (DirectionalExplosion explosion : _explosions) {
+			explosion.render(screen);
 		}
 	}
-	
+
+	// update vụ nổ
 	public void updateExplosions() {
-		for (int i = 0; i < _explosions.length; i++) {
-			_explosions[i].update();
+		for (DirectionalExplosion explosion : _explosions) {
+			explosion.update();
 		}
 	}
-	
+
 	public void explode() {
 		_timeToExplode = 0;
 	}
@@ -108,8 +112,8 @@ public class Bomb extends AnimatedEntitiy {
 	public boolean isExploded() {
 		return _exploded;
 	}
-	
 
+	// xác định va chạm thực thể với vụ nổ
 	@Override
 	public boolean collide(Entity e) {
 		

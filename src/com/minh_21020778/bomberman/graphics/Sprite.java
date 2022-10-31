@@ -1,5 +1,8 @@
 package com.minh_21020778.bomberman.graphics;
 
+import java.util.Arrays;
+
+// lưu trữ thông tin của một sprite
 public class Sprite {
 	
 	public final int SIZE;
@@ -9,8 +12,8 @@ public class Sprite {
 	protected int _realHeight;
 	private SpriteSheet _sheet;
 	
-	public static Sprite voidSprite = new Sprite(16, 0xffffff); //black
-	
+	public static Sprite voidSprite = new Sprite(16, 0xffffff); // màu nền mặc định là màu đen
+
 	/*
 	|--------------------------------------------------------------------------
 	| Board sprites
@@ -192,11 +195,10 @@ public class Sprite {
 		_pixels = new int[SIZE * SIZE];
 		setColor(color);
 	}
-	
+
+	// set màu nền
 	private void setColor(int color) {
-		for (int i = 0; i < _pixels.length; i++) {
-			_pixels[i] = color;
-		}
+		Arrays.fill(_pixels, color);
 	}
 
 	private void load() {

@@ -5,8 +5,9 @@ import java.util.LinkedList;
 import com.minh_21020778.bomberman.entities.tile.destroyable.DestroyableTile;
 import com.minh_21020778.bomberman.graphics.Screen;
 
+// chứa và quản lý nhiều entity tại cùng một vị trí
+// vd như powerup, brick ...
 public class LayeredEntity extends Entity {
-	
 	protected LinkedList<Entity> _entities = new LinkedList<Entity>();
 	
 	public LayeredEntity(int x, int y, Entity ... entities) {

@@ -13,6 +13,7 @@ import com.minh_21020778.bomberman.gui.Frame;
 import com.minh_21020778.bomberman.Game;
 import com.minh_21020778.bomberman.gui.InfoDialog;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class Help extends JMenu {
 
 	public Help(Frame frame)  {

@@ -6,8 +6,6 @@ import com.minh_21020778.bomberman.graphics.Sprite;
 import com.minh_21020778.bomberman.level.Coordinates;
 
 public abstract class Tile extends Entity {
-	
-	
 	public Tile(int x, int y, Sprite sprite) {
 		_x = x;
 		_y = y;

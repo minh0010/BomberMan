@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import com.minh_21020778.bomberman.graphics.Screen;
 
+// hiển thị thông tin dạng string
 public class Message extends Entity {
 	protected String _message;
 	protected int _duration;

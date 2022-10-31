@@ -7,8 +7,8 @@ import com.minh_21020778.bomberman.graphics.Screen;
 import com.minh_21020778.bomberman.graphics.Sprite;
 import com.minh_21020778.bomberman.level.Coordinates;
 
+// tường gạch có thể phá hủy
 public class BrickTile extends DestroyableTile {
-	
 	public BrickTile(int x, int y, Sprite sprite) {
 		super(x, y, sprite);
 	}
@@ -40,6 +40,4 @@ public class BrickTile extends DestroyableTile {
 			
 		return false;
 	}
-	
-	
 }

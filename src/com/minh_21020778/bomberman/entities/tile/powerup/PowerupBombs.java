@@ -5,15 +5,16 @@ import com.minh_21020778.bomberman.entities.Entity;
 import com.minh_21020778.bomberman.entities.mob.Player;
 import com.minh_21020778.bomberman.graphics.Sprite;
 
+// powerup tăng số lượng bomb
 public class PowerupBombs extends Powerup {
 
 	public PowerupBombs(int x, int y, int level, Sprite sprite) {
 		super(x, y, level, sprite);
 	}
-	
+
+	// khi nhận vật chạm vào thì cho biến mất
 	@Override
 	public boolean collide(Entity e) {
-		
 		if(e instanceof Player) {
 			((Player) e).addPowerup(this);
 			remove();
@@ -28,7 +29,4 @@ public class PowerupBombs extends Powerup {
 		_active = true;
 		Game.addBombRate(1);
 	}
-	
-
-
 }

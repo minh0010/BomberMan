@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+// không hoàn thành được phần menu trước khi hết hạn :((((
 public class InfoDialog implements WindowListener {
 
 		private Frame _frame;

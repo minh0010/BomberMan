@@ -5,9 +5,10 @@ import com.minh_21020778.bomberman.entities.bomb.DirectionalExplosion;
 import com.minh_21020778.bomberman.entities.tile.Tile;
 import com.minh_21020778.bomberman.graphics.Sprite;
 
+// các vật phẩm có thể phá hủy
 public class DestroyableTile extends Tile {
 
-	private final int MAX_ANIMATE = 7500; //save the animation status and dont let this get too big
+	private final int MAX_ANIMATE = 7500;
 	private int _animate = 0;
 	protected boolean _destroyed = false;
 	protected int _timeToDisapear = 20;
@@ -38,7 +39,6 @@ public class DestroyableTile extends Tile {
 	
 	@Override
 	public boolean collide(Entity e) {
-		
 		if(e instanceof DirectionalExplosion)
 			destroy();
 			
@@ -59,8 +59,6 @@ public class DestroyableTile extends Tile {
 		if(calc < 20) {
 			return x1;
 		}
-			
 		return x2;
 	}
-	
 }

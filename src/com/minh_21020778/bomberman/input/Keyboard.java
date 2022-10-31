@@ -8,7 +8,8 @@ public class Keyboard implements KeyListener {
 	
 	private boolean[] keys = new boolean[120]; // bằng này phím là đủ cho game này rồi
 	public boolean up, down, left, right, space; // các phím cơ bản
-	
+
+	// cật nhật phím mới
 	public void update() {
 		up = keys[KeyEvent.VK_UP] || keys[KeyEvent.VK_W];
 		down = keys[KeyEvent.VK_DOWN] || keys[KeyEvent.VK_S];
@@ -20,11 +21,13 @@ public class Keyboard implements KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {}
 
+	// xác định phím được nhấn
 	@Override
 	public void keyPressed(KeyEvent e) {
 		keys[e.getKeyCode()] = true;
 	}
 
+	// xác định phím được thả ra
 	@Override
 	public void keyReleased(KeyEvent e) {
 		keys[e.getKeyCode()] = false;

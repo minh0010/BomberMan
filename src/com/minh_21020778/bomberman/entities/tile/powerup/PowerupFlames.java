@@ -5,12 +5,14 @@ import com.minh_21020778.bomberman.entities.Entity;
 import com.minh_21020778.bomberman.entities.mob.Player;
 import com.minh_21020778.bomberman.graphics.Sprite;
 
+// tăng độ dài vụ nổ
 public class PowerupFlames extends Powerup {
 
 	public PowerupFlames(int x, int y, int level, Sprite sprite) {
 		super(x, y, level, sprite);
 	}
-	
+
+	// khi nhận vật chạm vào thì cho biến mất
 	@Override
 	public boolean collide(Entity e) {
 		

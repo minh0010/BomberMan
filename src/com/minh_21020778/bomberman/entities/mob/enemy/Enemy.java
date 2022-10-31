@@ -18,7 +18,7 @@ public abstract class Enemy extends Mob {
 
 	protected int _points;
 	
-	protected double _speed; //Speed should change on level transition
+	protected double _speed;
 	protected AI _ai;
 	
 	//necessary to correct move
@@ -45,7 +45,7 @@ public abstract class Enemy extends Mob {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Mob Render & Update
+	| render và update
 	|--------------------------------------------------------------------------
 	 */
 	@Override
@@ -81,7 +81,7 @@ public abstract class Enemy extends Mob {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Mob Move
+	| di chuyển
 	|--------------------------------------------------------------------------
 	 */
 	@Override
@@ -140,7 +140,7 @@ public abstract class Enemy extends Mob {
 	
 	/*
 	|--------------------------------------------------------------------------
-	| Mob Colide & Kill
+	| va chạm và giết quái
 	|--------------------------------------------------------------------------
 	 */
 	@Override
